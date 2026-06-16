@@ -1,16 +1,36 @@
-## Hi there 👋
+# Muhammad Adi Firmansyah — Personal Portfolio
 
-<!--
-**muhadif90-admn/muhadif90-admn** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A clean, single-page personal portfolio website.
+**Live site:** https://muhadif90-admn.github.io/muhadif90-admn/
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## About
+
+Marketing & data administration professional with experience in data administration,
+document preparation, and collaborative sales support. This site presents my background,
+experience, skills, and contact details in one place.
+
+## Sections
+
+- **About** — professional summary
+- **Experience** — work history
+- **Skills & Tools** — technical, professional, and language skills
+- **Education** — academic background
+- **Contact** — email and LinkedIn
+
+## Built With
+
+- HTML5
+- CSS3
+- Hosted on GitHub Pages
+
+## Contact
+
+- **Email:** muhadif90@gmail.com
+- **LinkedIn:** [muhammad-adi-firmansyah](https://www.linkedin.com/in/muhammad-adi-firmansyah)
+- **Location:** South Jakarta, Indonesia
+
+---
+
+> Open to opportunities in marketing, data administration, and sales support.
