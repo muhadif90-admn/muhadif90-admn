@@ -29,6 +29,21 @@
   }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
 
+  /* Language toggle */
+  .lang-toggle {
+    position: fixed; top: 20px; right: 20px; z-index: 50;
+    display: inline-flex; background: var(--paper-2);
+    border: 1px solid var(--line); border-radius: 100px; padding: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .lang-toggle button {
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.05em; border: none; background: none; cursor: pointer;
+    padding: 6px 14px; border-radius: 100px; color: var(--ink-soft);
+    transition: all .2s;
+  }
+  .lang-toggle button.active { background: var(--accent); color: var(--paper); }
+
   /* Header */
   header { padding: 90px 0 64px; }
   .eyebrow {
@@ -41,22 +56,6 @@
     letter-spacing: -0.01em; margin-bottom: 18px;
   }
   h1 em { font-style: italic; color: var(--accent); }
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; font-weight: 500; color: var(--accent);
-    background: rgba(61, 90, 69, 0.08); border: 1px solid rgba(61, 90, 69, 0.25);
-    padding: 5px 14px; border-radius: 100px; margin-bottom: 20px;
-  }
-  .badge-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent-soft);
-    box-shadow: 0 0 0 0 rgba(107, 138, 114, 0.6);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(107, 138, 114, 0.5); }
-    70% { box-shadow: 0 0 0 7px rgba(107, 138, 114, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(107, 138, 114, 0); }
-  }
   .lede {
     font-size: clamp(16px, 2.4vw, 19px); color: var(--ink-soft);
     max-width: 600px; margin-bottom: 30px; text-align: justify;
@@ -125,118 +124,150 @@
     .job, .edu { grid-template-columns: 1fr; gap: 4px; }
     .job-when, .edu-when { padding-top: 0; }
     section { padding: 40px 0; }
+    .lang-toggle { top: 12px; right: 12px; }
   }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .badge-dot { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
+
+<div class="lang-toggle">
+  <button data-lang="en" class="active" onclick="setLang('en')">EN</button>
+  <button data-lang="id" onclick="setLang('id')">ID</button>
+</div>
+
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">Portfolio</div>
+    <div class="eyebrow" data-en="Portfolio" data-id="Portofolio">Portfolio</div>
     <h1>Muhammad Adi<br>Firmansyah</h1>
-    <p class="lede">Admin Executive working at the intersection of <em>precise numbers</em> and <em>dependable process</em>: invoice processing, tax administration, and accurate financial reporting.</p>
+    <p class="lede"
+       data-en="Admin Executive working at the intersection of <em>precise numbers</em> and <em>dependable process</em>: invoice processing, tax administration, and accurate financial reporting."
+       data-id="Admin Executive yang berfokus pada ketelitian dalam pengelolaan data, pemrosesan invoice, administrasi perpajakan, dan pelaporan keuangan yang akurat.">Admin Executive working at the intersection of <em>precise numbers</em> and <em>dependable process</em>: invoice processing, tax administration, and accurate financial reporting.</p>
     <div class="meta">
       <a href="mailto:muhadif90@gmail.com"><span class="dot"></span>muhadif90@gmail.com</a>
       <a href="https://www.linkedin.com/in/muhammad-adi-firmansyah-53b93b343/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
-      <span><span class="dot"></span>South Jakarta</span>
+      <span data-en="South Jakarta" data-id="Jakarta Selatan"><span class="dot"></span>South Jakarta</span>
     </div>
   </header>
 
   <section id="about">
-    <div class="sec-label"><span class="num">01</span> About</div>
-    <p class="about-text">Admin Executive with hands-on experience in invoice processing, tax administration, and financial record-keeping for consulting operations. Skilled in Coretax (DJP e-Faktur, PPN, SPT Masa) and Xero, with a strong Excel foundation for data reconciliation and accurate reporting. Backed by a marketing and sales background that sharpened my communication and cross-functional teamwork, I adapt quickly to new processes and take pride in precise, dependable administrative work.</p>
+    <div class="sec-label"><span class="num">01</span> <span data-en="About" data-id="Tentang">About</span></div>
+    <p class="about-text"
+       data-en="Admin Executive with hands-on experience in invoice processing, tax administration, and financial record-keeping for consulting operations. Skilled in Coretax (DJP e-Faktur, PPN, SPT Masa) and Xero, with a strong Excel foundation for data reconciliation and accurate reporting. Backed by a marketing and sales background that sharpened my communication and cross-functional teamwork, I adapt quickly to new processes and take pride in precise, dependable administrative work."
+       data-id="Admin Executive dengan pengalaman dalam pemrosesan invoice, administrasi perpajakan, dan pengelolaan pencatatan keuangan pada lingkungan perusahaan konsultan. Terbiasa menggunakan Coretax (DJP e-Faktur, PPN, dan SPT Masa) serta Xero untuk mendukung proses administrasi dan pelaporan keuangan. Memiliki kemampuan yang baik dalam Microsoft Excel untuk rekonsiliasi data dan penyusunan laporan yang akurat. Didukung pengalaman di bidang marketing dan sales, saya terbiasa berkomunikasi dengan berbagai pihak, bekerja sama lintas divisi, serta mampu beradaptasi dengan cepat terhadap proses kerja yang baru. Saya selalu mengutamakan ketelitian, kerapihan administrasi, dan hasil kerja yang dapat dipercaya.">Admin Executive with hands-on experience in invoice processing, tax administration, and financial record-keeping for consulting operations. Skilled in Coretax (DJP e-Faktur, PPN, SPT Masa) and Xero, with a strong Excel foundation for data reconciliation and accurate reporting. Backed by a marketing and sales background that sharpened my communication and cross-functional teamwork, I adapt quickly to new processes and take pride in precise, dependable administrative work.</p>
   </section>
 
   <section id="experience">
-    <div class="sec-label"><span class="num">02</span> Experience</div>
+    <div class="sec-label"><span class="num">02</span> <span data-en="Experience" data-id="Pengalaman">Experience</span></div>
     <div class="job">
-      <div class="job-when">Jul 2026 – Present</div>
+      <div class="job-when" data-en="Jul 2026 – Present" data-id="Jul 2026 – Sekarang">Jul 2026 – Present</div>
       <div>
         <div class="job-role">Admin Executive</div>
         <div class="job-co">PT Adi Consulting</div>
         <ul>
-          <li>Handled end-to-end invoice processing and document administration for consulting operations.</li>
-          <li>Worked with Coretax (DJP e-Faktur, PPN, SPT Masa) for tax-related invoice and reporting workflows.</li>
-          <li>Managed bookkeeping and financial records using Xero accounting software.</li>
-          <li>Applied Excel for data reconciliation, three-way matching, and accurate reporting.</li>
+          <li data-en="Handled end-to-end invoice processing and document administration for consulting operations."
+              data-id="Bertanggung jawab atas proses pemrosesan invoice secara menyeluruh beserta administrasi dokumen untuk mendukung operasional perusahaan.">Handled end-to-end invoice processing and document administration for consulting operations.</li>
+          <li data-en="Worked with Coretax (DJP e-Faktur, PPN, SPT Masa) for tax-related invoice and reporting workflows."
+              data-id="Mengelola administrasi perpajakan menggunakan Coretax, termasuk e-Faktur DJP, PPN, dan SPT Masa.">Worked with Coretax (DJP e-Faktur, PPN, SPT Masa) for tax-related invoice and reporting workflows.</li>
+          <li data-en="Managed bookkeeping and financial records using Xero accounting software."
+              data-id="Menangani pencatatan dan pembukuan keuangan menggunakan software akuntansi Xero.">Managed bookkeeping and financial records using Xero accounting software.</li>
+          <li data-en="Applied Excel for data reconciliation, three-way matching, and accurate reporting."
+              data-id="Mengolah data menggunakan Microsoft Excel untuk rekonsiliasi, three-way matching, serta penyusunan laporan keuangan yang akurat.">Applied Excel for data reconciliation, three-way matching, and accurate reporting.</li>
         </ul>
       </div>
     </div>
     <div class="job">
-      <div class="job-when">Mar 2025 – Sep 2025</div>
+      <div class="job-when" data-en="Mar 2025 – Sep 2025" data-id="Mar 2025 – Sep 2025">Mar 2025 – Sep 2025</div>
       <div>
-        <div class="job-role">Marketing Intern</div>
+        <div class="job-role" data-en="Marketing Intern" data-id="Marketing Staff (Magang)">Marketing Intern</div>
         <div class="job-co">PT. Asuransi Jiwa Syariah Jasa Mitra Abadi Tbk</div>
         <ul>
-          <li>Developed communication and teamwork skills through the coordination of promotional activities.</li>
-          <li>Utilized Microsoft Office (Excel, Word) efficiently for reporting and data analysis.</li>
-          <li>Contributed to visual content creation and basic copywriting, and supported market research and corporate branding strategies.</li>
+          <li data-en="Developed communication and teamwork skills through the coordination of promotional activities."
+              data-id="Mengembangkan kemampuan komunikasi dan kerja sama tim melalui koordinasi berbagai kegiatan promosi.">Developed communication and teamwork skills through the coordination of promotional activities.</li>
+          <li data-en="Utilized Microsoft Office (Excel, Word) efficiently for reporting and data analysis."
+              data-id="Memanfaatkan Microsoft Excel dan Microsoft Word untuk pengolahan data, penyusunan laporan, serta administrasi pekerjaan.">Utilized Microsoft Office (Excel, Word) efficiently for reporting and data analysis.</li>
+          <li data-en="Contributed to visual content creation and basic copywriting, and supported market research and corporate branding strategies."
+              data-id="Berkontribusi dalam pembuatan konten visual, penulisan copy sederhana, serta mendukung kegiatan riset pasar dan pengembangan strategi branding perusahaan.">Contributed to visual content creation and basic copywriting, and supported market research and corporate branding strategies.</li>
         </ul>
       </div>
     </div>
     <div class="job">
-      <div class="job-when">Jan 2020 – Jan 2021</div>
+      <div class="job-when" data-en="Jan 2020 – Jan 2021" data-id="Jan 2020 – Jan 2021">Jan 2020 – Jan 2021</div>
       <div>
-        <div class="job-role">Sales Marketing</div>
+        <div class="job-role" data-en="Sales Marketing" data-id="Sales Marketing">Sales Marketing</div>
         <div class="job-co">PT. Asuransi Jiwa Syariah Jasa Mitra Abadi Tbk</div>
         <ul>
-          <li>Sourced new prospects and maintained strong relationships with clients.</li>
-          <li>Conducted product presentations, negotiated terms, and successfully closed sales.</li>
-          <li>Prepared comprehensive sales reports and actively contributed to achieving team targets.</li>
-          <li>Supported promotional strategies to enhance brand awareness and increase sales volume.</li>
+          <li data-en="Sourced new prospects and maintained strong relationships with clients."
+              data-id="Mencari dan mengembangkan peluang bisnis dengan memperoleh prospek baru serta membangun hubungan yang baik dengan pelanggan.">Sourced new prospects and maintained strong relationships with clients.</li>
+          <li data-en="Conducted product presentations, negotiated terms, and successfully closed sales."
+              data-id="Melakukan presentasi produk, negosiasi, hingga proses penutupan penjualan.">Conducted product presentations, negotiated terms, and successfully closed sales.</li>
+          <li data-en="Prepared comprehensive sales reports and actively contributed to achieving team targets."
+              data-id="Menyusun laporan penjualan secara berkala serta berkontribusi dalam pencapaian target tim.">Prepared comprehensive sales reports and actively contributed to achieving team targets.</li>
+          <li data-en="Supported promotional strategies to enhance brand awareness and increase sales volume."
+              data-id="Mendukung pelaksanaan strategi promosi untuk meningkatkan kesadaran merek dan pertumbuhan penjualan.">Supported promotional strategies to enhance brand awareness and increase sales volume.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <div class="sec-label"><span class="num">03</span> Skills &amp; Tools</div>
+    <div class="sec-label"><span class="num">03</span> <span data-en="Skills &amp; Tools" data-id="Keahlian &amp; Alat">Skills &amp; Tools</span></div>
     <div class="skill-grid">
       <div class="skill-block">
-        <h3>Technical</h3>
+        <h3 data-en="Technical" data-id="Teknis">Technical</h3>
         <div class="tags">
           <span class="tag">Excel</span><span class="tag">Word</span><span class="tag">PowerPoint</span>
+          <span class="tag">Microsoft Outlook</span>
           <span class="tag">Coretax</span><span class="tag">Xero</span>
           <span class="tag">Google Workspace</span><span class="tag">Canva</span><span class="tag">CapCut</span>
         </div>
       </div>
       <div class="skill-block">
-        <h3>Professional</h3>
+        <h3 data-en="Professional" data-id="Profesional">Professional</h3>
         <div class="tags">
-          <span class="tag">Invoice Processing</span><span class="tag">Tax Administration</span>
-          <span class="tag">Bookkeeping</span><span class="tag">Public Relations</span>
-          <span class="tag">Cross-functional Team</span><span class="tag">Agile &amp; Adaptable</span>
+          <span class="tag" data-en="Invoice Processing" data-id="Pemrosesan Invoice">Invoice Processing</span>
+          <span class="tag" data-en="Tax Administration" data-id="Administrasi Pajak">Tax Administration</span>
+          <span class="tag" data-en="Bookkeeping" data-id="Pembukuan">Bookkeeping</span>
+          <span class="tag" data-en="Public Relations" data-id="Hubungan Masyarakat">Public Relations</span>
+          <span class="tag" data-en="Cross-functional Team" data-id="Tim Lintas Fungsi">Cross-functional Team</span>
+          <span class="tag" data-en="Agile &amp; Adaptable" data-id="Adaptif &amp; Fleksibel">Agile &amp; Adaptable</span>
         </div>
       </div>
       <div class="skill-block">
-        <h3>Languages</h3>
+        <h3 data-en="Languages" data-id="Bahasa">Languages</h3>
         <div class="tags">
-          <span class="tag">Indonesian — Native</span><span class="tag">Javanese — Native</span>
-          <span class="tag">English — Basic</span><span class="tag">Japanese — Basic</span>
+          <span class="tag" data-en="Indonesian — Native" data-id="Indonesia — Ahli">Indonesian — Native</span>
+          <span class="tag" data-en="Javanese — Native" data-id="Jawa — Ahli">Javanese — Native</span>
+          <span class="tag" data-en="English — Basic" data-id="Inggris — Dasar">English — Basic</span>
+          <span class="tag" data-en="Japanese — Basic" data-id="Jepang — Dasar">Japanese — Basic</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="education">
-    <div class="sec-label"><span class="num">04</span> Education</div>
+    <div class="sec-label"><span class="num">04</span> <span data-en="Education" data-id="Pendidikan">Education</span></div>
     <div class="edu">
       <div class="edu-when">2018 – 2025</div>
       <div>
-        <div class="edu-deg">Bachelor of Information System</div>
-        <p>Universitas Ary Ginanjar · GPA 2.84 / 4.00</p>
-        <p class="course">Relevant coursework: Data Warehouse, Data Mining, Data Entry, Data Science, Web Design, UI/UX.</p>
+        <div class="edu-deg" data-en="Bachelor of Information System" data-id="Sarjana Sistem Informasi">Bachelor of Information System</div>
+        <p data-en="Universitas Ary Ginanjar · GPA 2.84 / 4.00" data-id="Universitas Ary Ginanjar · IPK 2.84 / 4.00">Universitas Ary Ginanjar · GPA 2.84 / 4.00</p>
+        <p class="course"
+           data-en="Relevant coursework: Data Warehouse, Data Mining, Data Entry, Data Science, Web Design, UI/UX."
+           data-id="Mata kuliah relevan: Data Warehouse, Data Mining, Data Entry, Data Science, Web Design, UI/UX.">Relevant coursework: Data Warehouse, Data Mining, Data Entry, Data Science, Web Design, UI/UX.</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <div class="sec-label"><span class="num">05</span> Contact</div>
-    <h2>Let's <em>connect</em>.</h2>
-    <p class="about-text">Currently working as Admin Executive at PT Adi Consulting. Feel free to reach out for collaboration or professional inquiries.</p>
+    <div class="sec-label"><span class="num">05</span> <span data-en="Contact" data-id="Kontak">Contact</span></div>
+    <h2 data-en="Let's <em>connect</em>." data-id="Mari <em>terhubung</em>.">Let's <em>connect</em>.</h2>
+    <p class="about-text"
+       data-en="Currently working as Admin Executive at PT Adi Consulting. Feel free to reach out for collaboration or professional inquiries."
+       data-id="Saat ini saya bekerja sebagai Admin Executive di PT Adi Consulting. Saya terbuka untuk berdiskusi, menjalin kolaborasi, maupun peluang profesional lainnya. Silakan menghubungi saya apabila terdapat kesempatan yang sesuai.">Currently working as Admin Executive at PT Adi Consulting. Feel free to reach out for collaboration or professional inquiries.</p>
     <div class="contact-links">
-      <a class="btn btn-fill" href="mailto:muhadif90@gmail.com">Send Email</a>
+      <a class="btn btn-fill" href="mailto:muhadif90@gmail.com" data-en="Send Email" data-id="Kirim Email">Send Email</a>
       <a class="btn btn-out" href="https://www.linkedin.com/in/muhammad-adi-firmansyah-53b93b343/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
@@ -244,5 +275,24 @@
   <footer>© 2026 Muhammad Adi Firmansyah</footer>
 
 </div>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-'+lang);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('pref-lang', lang); } catch(e){}
+  }
+  // muat preferensi tersimpan (default EN)
+  (function(){
+    var saved = 'en';
+    try { saved = localStorage.getItem('pref-lang') || 'en'; } catch(e){}
+    setLang(saved);
+  })();
+</script>
 </body>
 </html>
