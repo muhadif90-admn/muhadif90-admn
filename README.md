@@ -1,15 +1,12 @@
 # Muhammad Adi Firmansyah — Personal Portfolio
 
-A clean, single-page personal portfolio website.
-**Live site:** https://muhadif90-admn.github.io/muhadif90-admn/
+A clean, single-page personal portfolio website. **Live site:** https://muhadif90-admn.github.io/muhadif90-admn/
 
 ---
 
 ## About
 
-Marketing & data administration professional with experience in data administration,
-document preparation, and collaborative sales support. This site presents my background,
-experience, skills, and contact details in one place.
+Admin Executive with hands-on experience in invoice processing, tax administration, and financial record-keeping, backed by a marketing and sales background. This site presents my background, experience, skills, and contact details in one place.
 
 ## Sections
 
@@ -28,9 +25,9 @@ experience, skills, and contact details in one place.
 ## Contact
 
 - **Email:** muhadif90@gmail.com
-- **LinkedIn:** [muhammad-adi-firmansyah](https://www.linkedin.com/in/muhammad-adi-firmansyah)
+- **LinkedIn:** [muhammad-adi-firmansyah](https://www.linkedin.com/in/muhammad-adi-firmansyah-53b93b343/)
 - **Location:** South Jakarta, Indonesia
 
 ---
 
-> Open to opportunities in marketing, data administration, and sales support.
+© 2026 Muhammad Adi Firmansyah
